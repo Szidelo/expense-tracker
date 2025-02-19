@@ -9,6 +9,7 @@ import {
 import { auth } from "../../firebase/Firebase";
 import { saveUser, setToken } from "../../redux/slices/authSlice";
 import { AppDispatch } from "../../redux/store/store";
+import { databaseService } from "./DatabaseService";
 
 class AuthService {
 	private auth;
@@ -28,6 +29,8 @@ class AuthService {
 			const userCredential = await createUserWithEmailAndPassword(this.auth, email, password);
 			const user = userCredential.user;
 			await updateProfile(user, { displayName: name });
+
+			await databaseService.saveUserToDB(user, name);
 
 			this.dispatch(saveUser({ email, name, id: user.uid, picture: user.photoURL || "" }));
 			return user;

@@ -10,8 +10,8 @@ function Home() {
 			<h1>Hello {user?.name}!</h1>
 			<div>
 				<ul>
-					<Link to={"register"}>Auth</Link>
-					<Link to={"tracker"}>Tracker</Link>
+					<Link to={"/register"}>Auth</Link>
+					<Link to={"/tracker"}>Tracker</Link>
 				</ul>
 			</div>
 		</div>

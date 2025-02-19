@@ -29,9 +29,9 @@ function App() {
 		<main>
 			<Routes>
 				<Route path="/" element={reduxUser ? <Home /> : <Navigate to="/register" />} />
-				<Route path="register" element={<Register />} />
-				<Route path="login" element={<Login />} />
-				<Route path="tracker" element={<Tracker />} />
+				<Route path="/register" element={<Register />} />
+				<Route path="/login" element={<Login />} />
+				<Route path="/tracker" element={<Tracker />} />
 			</Routes>
 		</main>
 	);
